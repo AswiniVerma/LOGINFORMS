@@ -34,6 +34,7 @@ const Home = () =>{
 
         
        var phoneno = "^\\d{10}$";
+       var uvalid = /^[A-Za-z]+$/;
         
             
         
@@ -50,15 +51,13 @@ const Home = () =>{
         else if(!mobile.match(phoneno)){
             alert("Invalid Phone Number Please Enter 10 digit phone number")
         }
-        // else if(mobile.length>10 || mobile === ""){
-        //     alert("invalid phonenumber")
-        // }
+        else if(username === "" ){
+            alert("username is required")
+        }
         
-
-        
-        
-        else if(username === ""){
-            alert("username is required");}
+        else if(!username.match(uvalid)){
+            alert("Enter a valid username");
+        }
         else if(email === ""){
             alert("email is required");
         }
