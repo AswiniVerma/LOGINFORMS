@@ -44,6 +44,7 @@ const Home = () =>{
         if( firstname ==="" || firstname.length>50){
             alert("firstname is not valid");
         }
+        
         else if(lastname === "" || lastname.length>50  ){
             alert("lastname is required");
         }
@@ -57,6 +58,9 @@ const Home = () =>{
         
         else if(!username.match(uvalid)){
             alert("Enter a valid username");
+        }
+        else if(username.length<5){
+            alert("username too small");
         }
         else if(email === ""){
             alert("email is required");
