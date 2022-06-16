@@ -35,7 +35,8 @@ const Home = () =>{
         
        var phoneno = "^\\d{10}$";
        var uvalid = /^[A-Za-z]+$/;
-        
+       var pvalid = "(?=^.{6,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*"
+
             
         
         e.preventDefault();
@@ -44,9 +45,15 @@ const Home = () =>{
         if( firstname ==="" || firstname.length>50){
             alert("firstname is not valid");
         }
-        
+
+        else if( !firstname.match(uvalid) ){
+            alert("firstname is not valid");
+        }
         else if(lastname === "" || lastname.length>50  ){
             alert("lastname is required");
+        }
+        else if( !lastname.match(uvalid) ){
+            alert("lastname is not valid");
         }
         
         else if(!mobile.match(phoneno)){
@@ -73,6 +80,9 @@ const Home = () =>{
         }
         else if(password.length<8){
             alert("password is too short");
+        }
+        else if(!password.match(pvalid)){
+            alert("password should contain atleast 8 characters, 1 digit and 1 special character and upper case, lowercase");
         }
         
         else{
