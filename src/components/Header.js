@@ -5,7 +5,7 @@ const Header = () =>{
         <div className="container">
             
         
-  <a className="navbar-brand" href="#">
+  <a className="navbar-brand" href="/">
     User Registration
   </a>
   <button
