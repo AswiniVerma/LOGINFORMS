@@ -32,19 +32,10 @@ const Home = () =>{
     }
     const addData = (e) =>{
 
-        function phonenumber(mobile)
-    {
-            var phoneno = /^\d{10}$/;
-        if(mobile.value.match(phoneno))
-            
-        return true;
-            
-      else
-        {
         
-        return false;
-        }
-}
+       var phoneno = "^\\d{10}$";
+        
+            
         
         e.preventDefault();
         const {firstname,lastname,username,mobile,email,password} = inpval;
@@ -56,9 +47,12 @@ const Home = () =>{
             alert("lastname is required");
         }
         
-        else if(phonenumber==false){
-            alert("invalid phonenumber")
+        else if(!mobile.match(phoneno)){
+            alert("Invalid Phone Number Please Enter 10 digit phone number")
         }
+        // else if(mobile.length>10 || mobile === ""){
+        //     alert("invalid phonenumber")
+        // }
         
 
         
