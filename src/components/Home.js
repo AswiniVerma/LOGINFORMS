@@ -89,9 +89,11 @@ const Home = () =>{
             console.log("ss");
             
             localStorage.setItem("userKey",JSON.stringify([...data,inpval]));
-            
+            alert("successfully signed up")
+            history('/login');
             
         }
+
     }
     return(
         <>
