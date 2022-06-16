@@ -38,9 +38,14 @@ const Details = () =>{
         <>{
         logindata.length===0 ?"error login first" :
         <>
-        <h1 className="text-center">Hello</h1>
-        <h2  className="text-center">{logindata[0].firstname} !</h2>
-        <div className="text-center">
+        <h1 className="text-center text-success">Hello {logindata[0].firstname} {logindata[0].lastname} !</h1>
+        <h2 className="text-center text-danger">Your Details are :-</h2>
+        
+        <h2  className="text-center text-primary">Username: {logindata[0].username} </h2>
+        <h2  className="text-center text-primary">Mobile No: {logindata[0].mobile} </h2>
+        <h2  className="text-center text-primary">Email: {logindata[0].email} </h2>
+        
+        <div className="text-center mt-3">
         <button className="btn btn-dark center" onClick={userLogout}>Logout</button>
         </div>
         
