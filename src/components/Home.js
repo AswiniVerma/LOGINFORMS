@@ -9,6 +9,7 @@ const Home = () =>{
         firstname:"",
         lastname:"",
         username:"",
+        mobile:"",
         email:"",
         password:""
 
@@ -30,15 +31,40 @@ const Home = () =>{
 
     }
     const addData = (e) =>{
-        e.preventDefault();
-        const {firstname,lastname,username,email,password} = inpval;
 
-        if( firstname ==="" && firstname.length>50){
+        function phonenumber(mobile)
+    {
+            var phoneno = /^\d{10}$/;
+        if(mobile.value.match(phoneno))
+            
+        return true;
+            
+      else
+        {
+        
+        return false;
+        }
+}
+        
+        e.preventDefault();
+        const {firstname,lastname,username,mobile,email,password} = inpval;
+
+        if( firstname ==="" || firstname.length>50){
             alert("firstname is not valid");
         }
-        else if(lastname === ""){
+        else if(lastname === "" || lastname.length>50  ){
             alert("lastname is required");
         }
+        
+        else if(phonenumber==false){
+            alert("invalid phonenumber")
+        }
+        
+
+        
+        
+        else if(username === ""){
+            alert("username is required");}
         else if(email === ""){
             alert("email is required");
         }
@@ -51,10 +77,13 @@ const Home = () =>{
         else if(password.length<8){
             alert("password is too short");
         }
+        
         else{
             console.log("ss");
-
+            
             localStorage.setItem("userKey",JSON.stringify([...data,inpval]));
+            
+            
         }
     }
     return(
@@ -107,6 +136,21 @@ const Home = () =>{
       name = 'username'
       onChange={getdata}
       required="firsname is required"
+    />
+    
+    
+  </div>
+  <div className="form-group mb-3  col-lg-6">
+    
+    <input
+      type="text"
+      className="form-control"
+      id="exampleInputEmail1"
+      aria-describedby="emailHelp"
+      placeholder="Enter Your Mobile No "
+      name = 'mobile'
+      onChange={getdata}
+      required="mobile is required"
     />
     
     
