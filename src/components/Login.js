@@ -105,7 +105,7 @@ const Login = () =>{
     Login
   </button>
 </form>
-<p className="mt-3">Create Account <span><NavLink to="/">Sign Up!</NavLink></span></p>
+<p className="mt-3">Create Account <span><NavLink to="/signup">Sign Up!</NavLink></span></p>
 
                 </div>
                 <Sign_img/>
