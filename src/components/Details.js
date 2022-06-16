@@ -39,6 +39,9 @@ const Details = () =>{
         logindata.length===0 ?"error login first" :
         <>
         <h1 className="text-center text-success">Hello {logindata[0].firstname} {logindata[0].lastname} !</h1>
+        <div className="text-center">
+        <img src = "./order.svg" style={{maxWidth:400}} alt=""/>
+        </div>
         <h2 className="text-center text-danger">Your Details are :-</h2>
         
         <h2  className="text-center text-primary">Username: {logindata[0].username} </h2>
